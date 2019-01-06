@@ -1,0 +1,111 @@
+= Invillia STORE API REST Guide
+Samarone Lopes;
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+:toc: left
+:toclevels: 4
+:sectlinks:
+:operation-curl-request-title: Example request
+:operation-http-response-title: Example response
+
+[[overview]]
+= Visão Geral
+
+[[overview-http-verbs]]
+== HTTP verbos
+
+Essa API usa verbos do HTTP como convenção para certas operações.
+
+|===
+| Verbo | Uso
+
+| `GET`
+| Usado para recuperar um recurso
+
+| `POST`
+| Usado para criar um recurso
+
+| `PUT`
+| Usado para atualizar um recurso
+
+| `DELETE`
+| Usado para deletar um recurso
+|===
+
+[[overview-http-status-codes]]
+== HTTP status codes
+
+Os códigos de status também são padronizados
+
+|===
+| Status code | Uso
+
+| `200 OK`
+| A requisição foi completada com sucesso.
+
+| `201 Created`
+| Um novo recurso foi criado com sucesso. Uma URI de acesso ao recurso é retornada.
+
+| `400 Bad Request`
+| Requisição foi mal formatada. O corpo da resposta contém informações sobre o problema.
+
+| `404 Not Found`
+| Recurso solicitado para a operação não existe.
+|===
+
+
+[[resources]]
+= Recursos
+
+[[resources-stores]]
+== STORES
+
+Um store representa uma Loja dentro do sistema
+
+[[resources-create-store]]
+=== Criação de uma loja
+
+Um exemplo de chamada usando cURL:
+
+include::{snippets}/create-store/curl-request.adoc[]
+
+Um exemplo de chamada usando HTTP:
+
+include::{snippets}/create-store/http-request.adoc[]
+
+Um exemplo de resposta usando HTTP:
+
+include::{snippets}/create-store/http-response.adoc[]
+
+[[resources-update-store]]
+=== Atualização
+
+Um exemplo de chamada usando cURL:
+
+include::{snippets}/update-store/curl-request.adoc[]
+
+Um exemplo de chamada usando HTTP:
+
+include::{snippets}/update-store/http-request.adoc[]
+
+Um exemplo de resposta usando HTTP:
+
+include::{snippets}/update-store/http-response.adoc[]
+
+[[resources-list-store]]
+=== Lista vários stores com filtro de parametros
+
+Um exemplo de chamada usando cURL:
+
+include::{snippets}/list-store/curl-request.adoc[]
+
+Um exemplo de chamada usando HTTP:
+
+include::{snippets}/list-store/http-request.adoc[]
+
+Um exemplo de resposta usando HTTP:
+
+include::{snippets}/list-store/http-response.adoc[]
+
+

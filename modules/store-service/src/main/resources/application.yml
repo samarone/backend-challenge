@@ -1,0 +1,4 @@
+spring:
+    liquibase:
+        #Configure liquibase default changelog
+        change-log: classpath:db/changelog/liquibase-changeLog.xml
