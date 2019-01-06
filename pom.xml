@@ -16,7 +16,6 @@
 	<modules>
 		<module>modules/config-service</module>
 		<module>modules/discovery-service</module>
-		<module>modules/gateway-service</module>
 		<module>modules/proxy-service</module>
 		<module>modules/store-service</module>
 		<!-- <module>order-service</module> -->

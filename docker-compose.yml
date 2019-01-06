@@ -1,0 +1,54 @@
+version: '2.3'
+services:
+  config-service:
+    container_name: config-service
+    build: ./modules/config-service
+    ports:
+      - "8888:8888"
+    networks:
+      - invillianet
+    healthcheck:
+      test: exit 0
+      interval: 10s
+      start_period: 5s
+  discovery-service:
+    container_name: discovery-service
+    build: ./modules/discovery-service
+    ports:
+      - "8761:8761"
+    depends_on:
+      config-service:
+          condition: service_healthy
+    networks:
+      - invillianet
+    healthcheck:
+      test: exit 0
+      interval: 10s
+      start_period: 5s
+  proxy-service:
+    container_name: proxy-service
+    build: ./modules/proxy-service
+    ports:
+      - "8080:8080"
+    depends_on:
+      config-service:
+          condition: service_healthy
+      discovery-service:
+          condition: service_healthy
+    networks:
+      - invillianet
+  store-service:
+    container_name: store-service
+    build: ./modules/store-service
+    ports:
+      - "8091:8091"
+    depends_on:
+      config-service:
+          condition: service_healthy
+      discovery-service:
+          condition: service_healthy
+    networks:
+      - invillianet
+networks:
+  invillianet:
+    driver: bridge
