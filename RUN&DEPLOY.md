@@ -1,6 +1,6 @@
 # Backend Challenge
 
-Este é projeto experimental que vista dividir um sistema monolitico em microserviços afim de melhorar a aanutenibilidade e ficar 
+Este é projeto experimental que visa dividir um sistema monolítico em microserviços afim de melhorar a manutenibilidade e ficar 
 aderente com as novos padrões de mercado.
 
 ## Começando
